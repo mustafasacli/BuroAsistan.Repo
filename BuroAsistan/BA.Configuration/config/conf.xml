@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<appsettings>
+
+  <current-culture>tr-TR</current-culture>
+  
+  <dblogin>
+    <db-properties>
+      
+      <properties name="buroSQL" driver-type="sqlserver" conn-str="">
+        <property key="Server" value="KRK" />
+        <property key="Initial Catalog" value="BuroTestDB" />
+        <property key="User Id" value="PWMyRQ==" />
+        <property key="Password" value="ek1USXpNVEk=" />
+      </properties>
+
+      <!-- Server=KRK; Initial Catalog=BuroTestDB; User Id=sa; Password=123123; -->
+      <properties name="main" driver-type="sqlserver" conn-str="">
+        <property key="Server" value="KRK" />
+        <property key="Initial Catalog" value="BuroTestDB" />
+        <property key="User Id" value="PWMyRQ==" />
+        <property key="Password" value="ek1USXpNVEk=" />
+      </properties>
+
+      <!-- Server=KRK; Initial Catalog=BuroTestDB; User Id=sa; Password=123123; -->
+      <properties name="ext" driver-type="sqlserver" conn-str="">
+        <property key="Server" value="KRK" />
+        <property key="Initial Catalog" value="BuroTestDB" />
+        <property key="User Id" value="PWMyRQ==" />
+        <property key="Password" value="ek1USXpNVEk=" />
+      </properties>
+
+      <!--properties name="ext">
+        <property key="" value=""/>
+        <property key="" value=""/>
+        <property key="" value=""/>
+        <property key="" value=""/>
+        <property key="" value=""/>
+      </properties-->
+
+    </db-properties>
+  </dblogin>
+
+  <appconfig>
+    <row-count>20</row-count>
+    <log-setting>
+      <save-type>db</save-type>
+      <log-type>file</log-type>
+      <log-path>C:\\FreeORM\\log\\log.txt</log-path>
+    </log-setting>
+  </appconfig>
+
+</appsettings>

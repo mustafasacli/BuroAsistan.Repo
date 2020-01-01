@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D43E201A-DC2B-4C4D-91CF-CE48E53F5B27}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BA.UserManagement</RootNamespace>
+    <AssemblyName>BA.UserManagement</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Output\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Net.LawORM">
+      <HintPath>..\Buro.Externals\Net.LawORM.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Source\BO\RoleOperation.cs" />
+    <Compile Include="Source\BO\Roles.cs" />
+    <Compile Include="Source\BO\UserRoles.cs" />
+    <Compile Include="Source\BO\Users.cs" />
+    <Compile Include="Source\BO\UserTypes.cs" />
+    <Compile Include="Source\DL\MainDL.cs" />
+    <Compile Include="Source\DL\MainMySqlDL.cs" />
+    <Compile Include="Source\DL\MainSqlServerDL.cs" />
+    <Compile Include="Source\DL\RoleOperationDL.cs" />
+    <Compile Include="Source\DL\RolesDL.cs" />
+    <Compile Include="Source\DL\UserRolesDL.cs" />
+    <Compile Include="Source\DL\UsersDL.cs" />
+    <Compile Include="Source\DL\UserTypesDL.cs" />
+    <Compile Include="Source\QO\Crud.cs" />
+    <Compile Include="UserManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BA.ResourceManagement\BA.ResourceManagement.csproj">
+      <Project>{57a49b21-61a5-462c-87d5-679b313def00}</Project>
+      <Name>BA.ResourceManagement</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>rd /s /q "$(ProjectDir)obj\Debug"
+rd /s /q "$(ProjectDir)obj\Release"
+rd /s /q "$(ProjectDir)bin\Debug"
+rd /s /q "$(ProjectDir)bin\Release"
+rd /s /q "$(ProjectDir)bin\*"
+rd /s /q "$(ProjectDir)obj\*"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

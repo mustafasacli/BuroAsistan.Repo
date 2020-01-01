@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EC8BF66D-042E-4276-A768-AA0801B92741}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BuroAsistan</RootNamespace>
+    <AssemblyName>BuroAsistan</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Output\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Net.LawORM">
+      <HintPath>..\Buro.Externals\Net.LawORM.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\ControlResources\WinFormStrings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WinFormStrings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\ExceptionResources\Rc.cs" />
+    <Compile Include="Resources\ExceptionResources\RESOURCES.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RESOURCES.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\MessageResources\AppMessages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppMessages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Source\BO\Person.cs" />
+    <Compile Include="Source\BO\PersonProcurations.cs" />
+    <Compile Include="Source\BO\PersonProsecutions.cs" />
+    <Compile Include="Source\BO\Procurations.cs" />
+    <Compile Include="Source\BO\Prosecutions.cs" />
+    <Compile Include="Source\BO\ProsecutionTypes.cs" />
+    <Compile Include="Source\DL\MainDL.cs" />
+    <Compile Include="Source\DL\MainMySqlDL.cs" />
+    <Compile Include="Source\DL\MainSqlServerDL.cs" />
+    <Compile Include="Source\DL\PersonDL.cs" />
+    <Compile Include="Source\DL\PersonProcurationsDL.cs" />
+    <Compile Include="Source\DL\PersonProsecutionsDL.cs" />
+    <Compile Include="Source\DL\ProcurationsDL.cs" />
+    <Compile Include="Source\DL\ProsecutionsDL.cs" />
+    <Compile Include="Source\DL\ProsecutionTypesDL.cs" />
+    <Compile Include="Source\Management\PersonManager.cs" />
+    <Compile Include="Source\Management\ProcurationManager.cs" />
+    <Compile Include="Source\QO\Crud.cs" />
+    <Compile Include="Source\UserControls\FreeComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Source\UserControls\FreeGridView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Source\UserControls\FreeObject.cs" />
+    <Compile Include="Source\Variables\AppVariables.cs" />
+    <Compile Include="Util\MessageUtil.cs" />
+    <Compile Include="View\BaseView\FrmBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\BaseView\FrmBaseBO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\BaseView\FrmBaseList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\BO\FrmPerson.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\BO\FrmPerson.Designer.cs">
+      <DependentUpon>FrmPerson.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\BO\FrmProcuration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\BO\FrmProcuration.Designer.cs">
+      <DependentUpon>FrmProcuration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Buro\FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Buro\FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\List\FrmPersonList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\List\FrmPersonList.Designer.cs">
+      <DependentUpon>FrmPersonList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\List\FrmProcurationList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\List\FrmProcurationList.Designer.cs">
+      <DependentUpon>FrmProcurationList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Login\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Login\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Resources\ControlResources\WinFormStrings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>WinFormStrings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ControlResources\WinFormStrings.tr-TR.resx" />
+    <EmbeddedResource Include="Resources\ExceptionResources\RESOURCES.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RESOURCES.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\MessageResources\AppMessages.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppMessages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\MessageResources\AppMessages.tr-TR.resx" />
+    <EmbeddedResource Include="View\BO\FrmPerson.resx">
+      <DependentUpon>FrmPerson.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\BO\FrmProcuration.resx">
+      <DependentUpon>FrmProcuration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Buro\FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\List\FrmPersonList.resx">
+      <DependentUpon>FrmPersonList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\List\FrmProcurationList.resx">
+      <DependentUpon>FrmProcurationList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Login\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\BA.Configuration\BA.Configuration.csproj">
+      <Project>{b8a70b1e-899a-4004-84c6-e34977076f04}</Project>
+      <Name>BA.Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BA.ResourceManagement\BA.ResourceManagement.csproj">
+      <Project>{57a49b21-61a5-462c-87d5-679b313def00}</Project>
+      <Name>BA.ResourceManagement</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BA.UserManagement\BA.UserManagement.csproj">
+      <Project>{d43e201a-dc2b-4c4d-91cf-ce48e53f5b27}</Project>
+      <Name>BA.UserManagement</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>rd /s /q "$(ProjectDir)obj\Debug"
+rd /s /q "$(ProjectDir)obj\Release"
+rd /s /q "$(ProjectDir)bin\Debug"
+rd /s /q "$(ProjectDir)bin\Release"
+rd /s /q "$(ProjectDir)bin\*"
+rd /s /q "$(ProjectDir)obj\*"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
